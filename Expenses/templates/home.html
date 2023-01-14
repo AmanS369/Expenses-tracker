@@ -1,0 +1,39 @@
+{%extends "nav.html" %}
+{%block content%}
+{%if user.is_authenticated%}
+<div class="card w-100">
+    <div class="card-body">
+      <h3 class="card-title">Hii {{user.first_name}},</h3>
+      {% for bal in bal%}
+      <h5>The income is {{bal.income}}</h5>
+      {%endfor%}
+      <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+      <a href="/transcation" class="btn btn-primary">Add a transcation </a>
+    </div>
+  </div>
+<br><br>
+
+
+  <div class="container ">
+    <div class="row ">
+      {% for ex_block in ex_block%}
+      <div class="card-body border mt-2">
+        <h3 class="card-title">{{ex_block.Details}}</h3>
+        <h5>Amount-{{ex_block.amount}}</h5>
+        <h5>{{ex_block.transaction_type}}</h5>
+        <h5>Date:{{ex_block.Date}}</h5>
+        <h5>Categoery:-{{ex_block.category}}</h5>
+        <h5>Updated Balance:-{{ex_block.curr_balance}}</h5>
+        
+        <br>
+        </div>
+        {%endfor%}
+    </div>
+
+  </div>
+
+
+  {%else%}
+  <p>pls login</p>
+  {%endif%}
+{%endblock%}

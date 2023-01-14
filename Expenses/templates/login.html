@@ -1,0 +1,40 @@
+{%extends "nav.html" %}
+{%block content%}
+
+<div class="container">
+    <div class="p-4 mx-auto mt-5 border col-lg-6 pt pl pr">
+       <form action="/login" method="post">
+             
+              {%csrf_token%}
+              {% if error%}
+               
+               <div class="alert alert-danger" role="alert">{{error}}</div>
+               
+               {%endif%}
+               <!--passowrd-->
+               <div class="form-group mx-auto col-lg-5  pt-4">
+                 
+                <label for="">USername</label>
+                <input type="text" name="email" id="" class="form-control form-control-sm" required aria-describedby="helpId">
+              
+              </div>
+
+               <div class="form-group mx-auto col-lg-5  pt-4">
+                 
+                <label for="">Password</label>
+                <input type="text" name="password" id="" class="form-control form-control-sm" required placeholder="" aria-describedby="helpId">
+              
+              </div>
+              <div class="form-group mx-auto col-lg-5 pt-4">
+               
+                <label for=""></label>
+                <input type="submit" class="bt btn-sm btn-info mt-2">
+              
+              </div>
+       </form>
+    </div>
+</div>
+
+
+
+{%endblock%}
