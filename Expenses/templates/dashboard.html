@@ -1,0 +1,14 @@
+{%extends "nav.html" %}
+{%block content%}
+{%if user.is_authenticated%}
+
+<p> Hello </p>
+<a href="/transcation" class="btn btn-primary">Add a transcation </a>
+
+
+
+
+{%else%}
+<p>pls login</p>
+{%endif%}
+{%endblock%}
